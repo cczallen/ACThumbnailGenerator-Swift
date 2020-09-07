@@ -94,7 +94,7 @@ public class ACThumbnailGenerator: NSObject {
         
         let targetTime = CMTimeMakeWithSeconds(position, preferredTimescale: timeScale)
         if CMTIME_IS_VALID(targetTime) {
-            self.player?.seek(to: targetTime)
+            self.player?.seek(to: targetTime, toleranceBefore: .zero, toleranceAfter: .zero)
         }
     }
     
